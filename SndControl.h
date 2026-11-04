@@ -318,11 +318,8 @@ protected:
   //! \brief ALSA element event callback for this control element. Calls
   //! user supplied onInfoChange() and/or onValueChange() depending on mask.
   virtual void onElemEvent(unsigned mask) =0;
-
-private:
-  //! \brief ALSA hcontrol element callback.
   static int _elem_cb(snd_hctl_elem_t *elem, unsigned int mask);
-  
+
 public:
   //! \brief SND_CTL_ELEM_IFACE_XXXXX redefinitions for conciseness.
   enum Interface {

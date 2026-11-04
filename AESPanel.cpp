@@ -10,6 +10,7 @@
 //
 
 #include "AESPanel.h"
+#include "HDSPeConf.h"
 
 // begin wxGlade: ::extracode
 // end wxGlade
@@ -66,7 +67,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   };
   internalFreqChoice = new wxChoice(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 9, internalFreqChoice_choices);
   grid_sizer_2->Add(internalFreqChoice, 0, wxRESERVE_SPACE_EVEN_IF_HIDDEN, 0);
-  internalWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  internalWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   grid_sizer_2->Add(internalWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   wclkSyncButton = new wxRadioButton(this, wclkSyncID, wxT("Word Clk"));
   grid_sizer_2->Add(wclkSyncButton, 0, 0, 0);
@@ -75,7 +76,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   wclkFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(wclkFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  wclkWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  wclkWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   wclkWarn->Hide();
   grid_sizer_2->Add(wclkWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aes1SyncButton = new wxRadioButton(this, aes1SyncID, wxT("AES1"));
@@ -85,7 +86,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   aes1FreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(aes1FreqLabel, 0, wxALL, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aes1Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aes1Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aes1Warn->Hide();
   grid_sizer_2->Add(aes1Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aes2SyncButton = new wxRadioButton(this, aes2SyncID, wxT("AES2"));
@@ -95,7 +96,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   aes2FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(aes2FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aes2Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aes2Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aes2Warn->Hide();
   grid_sizer_2->Add(aes2Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aes3SyncButton = new wxRadioButton(this, aes3SyncID, wxT("AES3"));
@@ -105,7 +106,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   aes3FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(aes3FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aes3Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aes3Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aes3Warn->Hide();
   grid_sizer_2->Add(aes3Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aes4SyncButton = new wxRadioButton(this, aes4SyncID, wxT("AES4"));
@@ -115,7 +116,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   aes4FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(aes4FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aes4Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aes4Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aes4Warn->Hide();
   grid_sizer_2->Add(aes4Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aes5SyncButton = new wxRadioButton(this, aes5SyncID, wxT("AES5"));
@@ -125,7 +126,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   aes5FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(aes5FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aes5Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aes5Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aes5Warn->Hide();
   grid_sizer_2->Add(aes5Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aes6SyncButton = new wxRadioButton(this, aes6SyncID, wxT("AES6"));
@@ -135,7 +136,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   aes6FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(aes6FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aes6Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aes6Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aes6Warn->Hide();
   grid_sizer_2->Add(aes6Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aes7SyncButton = new wxRadioButton(this, aes7SyncID, wxT("AES7"));
@@ -145,7 +146,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   aes7FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(aes7FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aes7Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aes7Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aes7Warn->Hide();
   grid_sizer_2->Add(aes7Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aes8SyncButton = new wxRadioButton(this, aes8SyncID, wxT("AES8"));
@@ -155,7 +156,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   aes8FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(aes8FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aes8Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aes8Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aes8Warn->Hide();
   grid_sizer_2->Add(aes8Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   tcoSyncButton = new wxRadioButton(this, tcoSyncID, wxT("TCO"));
@@ -166,7 +167,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   tcoFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(tcoFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  tcoWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  tcoWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   tcoWarn->Hide();
   grid_sizer_2->Add(tcoWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   syncInSyncButton = new wxRadioButton(this, syncInSyncID, wxT("Sync In"));
@@ -176,7 +177,7 @@ AESPanel::AESPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const wx
   syncInFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(syncInFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  syncInWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  syncInWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   syncInWarn->Hide();
   grid_sizer_2->Add(syncInWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   wxStaticBoxSizer* sizer_16 = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxT("Pitch (PPM)")), wxVERTICAL);

@@ -3,7 +3,7 @@ SOURCES=hdspeconf.cpp SndCard.cpp SndControl.cpp \
 	NoCardsPanel.cpp TCOPanel.cpp AioPanel.cpp AioProPanel.cpp \
 	RayDATPanel.cpp AESPanel.cpp MADIPanel.cpp
 OBJECTS=${SOURCES:.cpp=.o} 
-CXXFLAGS=-Wall -g -O2 -I.. `wx-config --cxxflags`
+CXXFLAGS=-Wall -g -O2 -I.. `wx-config --cxxflags` -DDATADIR=\"./\"
 LDFLAGS=-lasound `wx-config --libs`
 
 all: hdspeconf

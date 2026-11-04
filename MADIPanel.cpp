@@ -10,6 +10,7 @@
 //
 
 #include "MADIPanel.h"
+#include "HDSPeConf.h"
 
 // begin wxGlade: ::extracode
 // end wxGlade
@@ -66,7 +67,7 @@ MADIPanel::MADIPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const 
   };
   internalFreqChoice = new wxChoice(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 9, internalFreqChoice_choices);
   grid_sizer_2->Add(internalFreqChoice, 0, wxRESERVE_SPACE_EVEN_IF_HIDDEN, 0);
-  internalWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  internalWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   grid_sizer_2->Add(internalWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   wclkSyncButton = new wxRadioButton(this, wclkSyncID, wxT("Word Clk"));
   grid_sizer_2->Add(wclkSyncButton, 0, 0, 0);
@@ -75,7 +76,7 @@ MADIPanel::MADIPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const 
   wclkFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(wclkFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  wclkWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  wclkWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   wclkWarn->Hide();
   grid_sizer_2->Add(wclkWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   madiSyncButton = new wxRadioButton(this, madiSyncID, wxT("MADI"));
@@ -85,7 +86,7 @@ MADIPanel::MADIPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const 
   madiFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(madiFreqLabel, 0, wxALL, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  madiWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  madiWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   madiWarn->Hide();
   grid_sizer_2->Add(madiWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   tcoSyncButton = new wxRadioButton(this, tcoSyncID, wxT("TCO"));
@@ -96,7 +97,7 @@ MADIPanel::MADIPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const 
   tcoFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(tcoFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  tcoWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  tcoWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   tcoWarn->Hide();
   grid_sizer_2->Add(tcoWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   syncInSyncButton = new wxRadioButton(this, syncInSyncID, wxT("Sync In"));
@@ -106,7 +107,7 @@ MADIPanel::MADIPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, const 
   syncInFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(syncInFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  syncInWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  syncInWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   syncInWarn->Hide();
   grid_sizer_2->Add(syncInWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   wxStaticBoxSizer* sizer_16 = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxT("Pitch (PPM)")), wxVERTICAL);

@@ -10,6 +10,7 @@
 //
 
 #include "RayDATPanel.h"
+#include "HDSPeConf.h"
 
 // begin wxGlade: ::extracode
 // end wxGlade
@@ -66,7 +67,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   };
   internalFreqChoice = new wxChoice(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 9, internalFreqChoice_choices);
   grid_sizer_2->Add(internalFreqChoice, 0, wxRESERVE_SPACE_EVEN_IF_HIDDEN, 0);
-  internalWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  internalWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   grid_sizer_2->Add(internalWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   wclkSyncButton = new wxRadioButton(this, wclkSyncID, wxT("Word Clk"));
   grid_sizer_2->Add(wclkSyncButton, 0, 0, 0);
@@ -75,7 +76,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   wclkFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(wclkFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  wclkWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  wclkWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   wclkWarn->Hide();
   grid_sizer_2->Add(wclkWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   aesSyncButton = new wxRadioButton(this, aesSyncID, wxT("AES"));
@@ -85,7 +86,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   aesFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(aesFreqLabel, 0, wxALL, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  aesWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  aesWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   aesWarn->Hide();
   grid_sizer_2->Add(aesWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   spdifSyncButton = new wxRadioButton(this, spdifSyncID, wxT("S/PDIF"));
@@ -95,7 +96,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   spdifFreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(spdifFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  spdifWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  spdifWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   spdifWarn->Hide();
   grid_sizer_2->Add(spdifWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   adat1SyncButton = new wxRadioButton(this, adat1SyncID, wxT("ADAT1"));
@@ -105,7 +106,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   adat1FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(adat1FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  adat1Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  adat1Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   adat1Warn->Hide();
   grid_sizer_2->Add(adat1Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   adat2SyncButton = new wxRadioButton(this, adat2SyncID, wxT("ADAT2"));
@@ -115,7 +116,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   adat2FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(adat2FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  adat2Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  adat2Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   adat2Warn->Hide();
   grid_sizer_2->Add(adat2Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   adat3SyncButton = new wxRadioButton(this, adat3SyncID, wxT("ADAT3"));
@@ -125,7 +126,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   adat3FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(adat3FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  adat3Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  adat3Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   adat3Warn->Hide();
   grid_sizer_2->Add(adat3Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   adat4SyncButton = new wxRadioButton(this, adat4SyncID, wxT("ADAT4"));
@@ -135,7 +136,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   adat4FreqLabel = new wxStaticText(this, wxID_ANY, wxT("48 KHz"));
   grid_sizer_2->Add(adat4FreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  adat4Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  adat4Warn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   adat4Warn->Hide();
   grid_sizer_2->Add(adat4Warn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   tcoSyncButton = new wxRadioButton(this, tcoSyncID, wxT("TCO"));
@@ -146,7 +147,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   tcoFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(tcoFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  tcoWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  tcoWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   tcoWarn->Hide();
   grid_sizer_2->Add(tcoWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   syncInSyncButton = new wxRadioButton(this, syncInSyncID, wxT("Sync In"));
@@ -156,7 +157,7 @@ RayDATPanel::RayDATPanel(wxWindow* parent, wxWindowID id, const wxPoint& pos, co
   syncInFreqLabel = new wxStaticText(this, wxID_ANY, wxEmptyString);
   grid_sizer_2->Add(syncInFreqLabel, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 4);
   grid_sizer_2->Add(0, 0, 0, 0, 0);
-  syncInWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT("./dialog-warning.png"), wxBITMAP_TYPE_ANY));
+  syncInWarn = new wxStaticBitmap(this, wxID_ANY, wxBitmap(wxT(WARNING_ICON_PATH), wxBITMAP_TYPE_ANY));
   syncInWarn->Hide();
   grid_sizer_2->Add(syncInWarn, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 16);
   wxStaticBoxSizer* sizer_16 = new wxStaticBoxSizer(new wxStaticBox(this, wxID_ANY, wxT("Pitch (PPM)")), wxVERTICAL);
